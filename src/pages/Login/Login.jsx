@@ -4,7 +4,8 @@ import Input from '../../shared/components/Input/Input';
 import Button from '../../shared/components/Button/Button';
 import useForm from '../../shared/hooks/useForm';
 import { validateLoginForm } from '../../shared/utils/validations';
-import authService from '../../shared/services/authServices';
+// import authService from '../../shared/services/authServices';
+import signInService from '../../shared/services/signInService';
 import styles from './Login.module.css';
 
 const Login = () => {
@@ -18,7 +19,8 @@ const Login = () => {
   const onSubmit = async () => {
     setIsLoading(true);
     try {
-      const response = await authService.login(values.username, values.password);
+      // const response = await authService.login(values.username, values.password);
+      const response = await signInService.signIn(values.username, values.password);
       localStorage.setItem('token', response.token)
       navigate('/profile');
     } catch (error) {

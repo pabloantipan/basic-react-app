@@ -1,4 +1,3 @@
-// Mock API call (replace with actual API call)
 const login = async (username, password) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -10,5 +9,6 @@ const login = async (username, password) => {
     }, 1000); // Simulate API delay
   });
 };
+
 
 export default { login };
